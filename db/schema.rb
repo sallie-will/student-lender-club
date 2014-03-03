@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140303063422) do
+ActiveRecord::Schema.define(version: 20140303074234) do
 
   create_table "investments", force: true do |t|
     t.float    "amount"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140303063422) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
