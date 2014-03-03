@@ -2,6 +2,8 @@ StudentLenderClub::Application.routes.draw do
 
   get "pages/index"
   get "pages/about"
+  get "pages/investing"
+  get "pages/how_it_works"
   devise_for :users
   
   resources :users do
