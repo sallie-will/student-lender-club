@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
+//= require back-to-top
+//= require jquery-migrate-1.2.1.min
+//= require jquery.cslider
+//= require modernizr
+//= require buildings
 //= require_tree .
+

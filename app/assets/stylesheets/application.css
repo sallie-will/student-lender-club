@@ -9,6 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap.min
+ *= require font-awesome-ie7.min
+ *= require font-awesome.min
+ *= require responsive
+ *= require app
+ *= require style
+ *= require parallax-slider
+ *= require flexslider
  *= require_self
  *= require_tree .
  */
