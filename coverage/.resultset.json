@@ -1,0 +1,19 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/rosannehoyem/Development/code/events/startupbus/student-lender-club/app/models/investment.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/rosannehoyem/Development/code/events/startupbus/student-lender-club/app/models/loan.rb": [
+        1,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1393829887
+  }
+}

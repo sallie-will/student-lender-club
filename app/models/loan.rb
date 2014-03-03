@@ -1,4 +1,4 @@
 class Loan < ActiveRecord::Base
-  has_many :investments
   belongs_to :user
+  validates :amount, presence: true
 end

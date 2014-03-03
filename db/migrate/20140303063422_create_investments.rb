@@ -3,7 +3,7 @@ class CreateInvestments < ActiveRecord::Migration
     create_table :investments do |t|
       t.float :amount
       t.float :interest
-      t.references :loan, index: true
+      t.references :user, index: true
 
       t.timestamps
     end
