@@ -6,45 +6,164 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+<!--=== Content Part ===-->
+<div class="container">   
+  <div class="row portfolio-item margin-bottom-50"> 
+        <!-- Content Info -->        
+        <div class="col-md-6 md-margin-bottom-40">
+            <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+            <p>
+              <%= @user.city %>, <%= @user.state %>
+            </p>
+            <p><%= @user.bio %></p>
+            <div class="row portfolio-item1">
+              <div class="col-xs-6">
+                <ul class="list-unstyled">
+                  <li><i class="icon-dropbox color-green"></i> 25GB For Free</li>
+                  <li><i class="icon-cloud color-green"></i> Cloud Hosting</li>
+                  <li><i class="icon-globe color-green"></i> Best Quality Ever</li>
+                  <li><i class="icon-comments color-green"></i> 24 Hours Support</li>
+                </ul>                    
+              </div>
+              <div class="col-xs-6">
+                <ul class="list-unstyled">
+                  <li><i class="icon-shopping-cart color-green"></i> Easy Shopping</li>
+                  <li><i class="icon-cog color-green"></i> Best Service</li>
+                  <li><i class="icon-html5 color-green"></i> HTML5/CSS3</li>
+                  <li><i class="icon-beaker color-green"></i> UI Design</li>
+                </ul>                    
+              </div>
+            </div>            
+            <p><a class="btn-u btn-u-large" href="#">VISIT THE PROJECT</a></p>
+        </div>
+        <!-- End Content Info -->        
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+        <!-- Carousel -->
+        <div class="col-md-6">
+            <div class="carousel slide carousel-v1" id="myCarousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                      <img alt="" src="assets/img/main/12.jpg">
+                      <div class="carousel-caption">
+                          <p>Facilisis odio, dapibus ac justo acilisis gestinas.</p>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img alt="" src="assets/img/main/13.jpg">
+                      <div class="carousel-caption">
+                        <p>Cras justo odio, dapibus ac facilisis into egestas.</p>
+                      </div>
+                      </div>
+                    <div class="item">
+                      <img alt="" src="assets/img/main/11.jpg">
+                      <div class="carousel-caption">
+                        <p>Justo cras odio apibus ac afilisis lingestas de.</p>
+                      </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-arrow">
+                    <a data-slide="prev" href="#myCarousel" class="left carousel-control">
+                        <i class="icon-angle-left"></i>
+                    </a>
+                    <a data-slide="next" href="#myCarousel" class="right carousel-control">
+                        <i class="icon-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- End Carousel -->
+    </div><!--/row-->
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+    <div class="tag-box tag-box-v2">
+        <p>Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat.</p>
+    </div>
 
-<p>
-  <strong>Street address:</strong>
-  <%= @user.street_address %>
-</p>
+    <div class="margin-bottom-20 clearfix"></div>
 
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
+  <!-- Recent Works -->
+    <div class="headline"><h2>Recent Works</h2></div>
+    <div class="margin-bottom-40">
+        <ul id="list" class="bxslider1 recent-work">
+            <li>
+                <a href="#">
+                  <em class="overflow-hidden"><img src="assets/img/main/2.jpg" alt="" /></em>
+                    <span>
+                        <strong>Happy New Year</strong>
+                        <i>Anim pariatur cliche reprehenderit</i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  <em class="overflow-hidden"><img src="assets/img/main/9.jpg" alt="" /></em>
+                    <span>
+                        <strong>Award Winning Agency</strong>
+                        <i>Responsive Bootstrap Template</i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  <em class="overflow-hidden"><img src="assets/img/main/4.jpg" alt="" /></em>
+                    <span>
+                        <strong>Wolf Moon Officia</strong>
+                        <i>Pariatur prehe cliche reprehrit</i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  <em class="overflow-hidden"><img src="assets/img/main/5.jpg" alt="" /></em>
+                    <span>
+                        <strong>Food Truck Quinoa Nesciunt</strong>
+                        <i>Craft labore wes anderson cred</i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  <em class="overflow-hidden"><img src="assets/img/main/6.jpg" alt="" /></em>
+                    <span>
+                        <strong>Happy New Year</strong>
+                        <i>Anim pariatur cliche reprehenderit</i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  <em class="overflow-hidden"><img src="assets/img/main/7.jpg" alt="" /></em>
+                    <span>
+                        <strong>Award Winning Agency</strong>
+                        <i>Responsive Bootstrap Template</i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  <em class="overflow-hidden"><img src="assets/img/main/8.jpg" alt="" /></em>
+                    <span>
+                        <strong>Wolf Moon Officia</strong>
+                        <i>Pariatur prehe cliche reprehrit</i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  <em class="overflow-hidden"><img src="assets/img/main/9.jpg" alt="" /></em>
+                    <span>
+                        <strong>Food Truck Quinoa Nesciunt</strong>
+                        <i>Craft labore wes anderson cred</i>
+                    </span>
+                </a>
+            </li>
+        </ul>        
+  </div><!--/row-->
+  <!-- End Recent Works -->                
+</div><!--/container-->   
+<!--=== End Content Part ===-->
 
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
 
-<p>
-  <strong>Zip:</strong>
-  <%= @user.zip %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @user.bio %>
-</p>
 
 <% if @user.role = "borrower" && @user.loans != nil %>
   <h3>Student Loan Needed</h3>

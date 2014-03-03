@@ -1,41 +1,45 @@
-<h1>Listing users</h1>
+<h1>Students in Need of Funding</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Street address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>Bio</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% @students.each do |student| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= student.first_name + " " + student.last_name %></h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li>Amount of Funding Needed: <%= student.amount %></li>
+          <li>Location: <%= student.city %></li>
+          <li>Bio: <%= student.bio %></li>
+        </ul>
+        <p><%= link_to "Visit Full Profile", student_path(student) %></p>
+      </div>
+    </div>
+<% end %>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.street_address %></td>
-        <td><%= user.city %></td>
-        <td><%= user.state %></td>
-        <td><%= user.zip %></td>
-        <td><%= user.bio %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+<!--=== Content Part ===-->
+<div class="container">   
+  <div class="row blog-page">    
+        <!-- Left Sidebar -->
+      <div class="col-md-9 md-margin-bottom-40">
+        <% @students.each do |student| %>
+            <!--Blog Post-->
+            <div class="row blog blog-medium margin-bottom-40">
+                <div class="col-md-5">
+                    <%= image_tag student.image, width: "100%" %>
+                </div>    
+                <div class="col-md-7">
+                    <h2><%= student.first_name + " " + student.last_name %></h2>
+                    <ul class="list-unstyled list-inline blog-info">
+                        <li>Amount of Funding Needed: <%= student.amount %></li>
+                        <li>Location: <%= student.city %></li>
+                    </ul>
+                    <p><%= student.bio %></p>
+                    <p><i class="icon-location-arrow"></i><%= link_to "Visit Full Profile", student_path(student), class: "btn-u btn-u-small" %></p>
+                </div>    
+            </div>
+            <!--End Blog Post-->        
 
-<%= link_to 'New User', new_user_path %>
+            <hr class="margin-bottom-40">
+            <% end %>
+
