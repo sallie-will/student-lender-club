@@ -46,5 +46,20 @@
   <%= @user.bio %>
 </p>
 
+<% if @user.role = "borrower" && @user.loans != nil %>
+  <h3>Student Loan Needed</h3>
+  <% @user.loans.each do |loan| %>
+  <%= loan.amount %>
+  <% end %>
+  <%= button_to new_user_investment(@current_user)%>
+  Invest in this Student
+  <% end %>
+<% else @user.role = "investor" && @user.investments != nil %>
+  <h3>Student Loan Needed</h3>
+  <% @user.investments.each do |investment| %>
+  <%= investment.amount %>
+  <% end %>
+<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
