@@ -7,6 +7,10 @@ gem 'rails', '4.0.2'
 gem 'sqlite3'
 gem 'devise'
 
+# Photo Uploader
+gem "rmagick"
+gem "carrierwave"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
