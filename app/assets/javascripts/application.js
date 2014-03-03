@@ -18,6 +18,5 @@
 //= require jquery-migrate-1.2.1.min
 //= require jquery.cslider
 //= require modernizr
-//= require buildings
 //= require_tree .
 

@@ -8,29 +8,54 @@
 </head>
 <body>
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "Sallie Will", root_path, class: "navbar-brand" %>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><%=link_to "Students", users_path %></li>
-        <li><%=link_to "Investing", pages_investing_path %></li>
-        <li><%=link_to "How It Works", pages_how_it_works_path %></li>
-        <li><%=link_to "About Us", pages_about_path %></li>
-      </ul>
+<!--=== Top ===-->    
+<div class="top">
+  <div class="container">         
+    <ul class="loginbar pull-right">
+        <% if user_signed_in? %>
+          Logged in as <strong><%= current_user.email %></strong>.
+          <%= link_to 'Edit profile', edit_user_registration_path %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %> |
+          <%= link_to "Login", new_user_session_path %>
+        <% end %>
+    </ul>
+  </div>      
+</div><!--/top-->
+<!--=== End Top ===-->    
 
-    </div><!--/.nav-collapse -->
-  </div>
-</div>
+<!--=== Header ===-->    
+<div class="header">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img id="logo-header" src="assets/img/logo1-default.png" alt="Logo">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><%=link_to "Students", users_path %></li>
+                  <li><%=link_to "Investing", pages_investing_path %></li>
+                  <li><%=link_to "How It Works", pages_how_it_works_path %></li>
+                  <li><%=link_to "About Us", pages_about_path %></li>
+                </ul>
+            </div><!-- /navbar-collapse -->
+        </div>    
+    </div>    
+</div><!--/header-->
+<!--=== End Header ===-->    
 
 <div class="container"> 
   <% if user_signed_in? %>
@@ -45,8 +70,133 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+
+<!--=== Slider ===-->
+<div class="slider-inner">
+    <div id="da-slider" class="da-slider">
+        <div class="da-slide">
+            <h2><i>CLEAN &amp; FRESH</i> <br /> <i>FULLY RESPONSIVE</i> <br /> <i>DESIGN</i></h2>
+            <p><i>Lorem ipsum dolor amet</i> <br /> <i>tempor incididunt ut</i> <br /> <i>veniam omnis </i></p>
+            <div class="da-img"><img src="assets/plugins/parallax-slider/img/1.png" alt="" /></div>
+        </div>
+        <div class="da-slide">
+            <h2><i>RESPONSIVE VIDEO</i> <br /> <i>SUPPORT AND</i> <br /> <i>MANY MORE</i></h2>
+            <p><i>Lorem ipsum dolor amet</i> <br /> <i>tempor incididunt ut</i></p>
+            <div class="da-img">
+        <iframe src="http://player.vimeo.com/video/47911018" width="530" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+            </div>
+        </div>
+        <div class="da-slide">
+            <h2><i>USING BEST WEB</i> <br /> <i>SOLUTIONS WITH</i> <br /> <i>HTML5/CSS3</i></h2>
+            <p><i>Lorem ipsum dolor amet</i> <br /> <i>tempor incididunt ut</i> <br /> <i>veniam omnis </i></p>
+            <div class="da-img"><img src="assets/plugins/parallax-slider/img/html5andcss3.png" alt="image01" /></div>
+        </div>
+        <div class="da-arrows">
+            <span class="da-arrows-prev"></span>
+            <span class="da-arrows-next"></span>    
+        </div>
+    </div><!--/da-slider-->
+</div><!--/slider-->
+<!--=== End Slider ===-->
+
 <%= yield %>
-</div>
+
+  </div>
+
+<!--=== Footer ===-->
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 md-margin-bottom-40">
+                <!-- About -->
+            <div class="headline"><h2>About</h2></div>  
+        <p class="margin-bottom-25 md-margin-bottom-40">Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals.</p>  
+
+              <!-- Monthly Newsletter -->
+            <div class="headline"><h2>Monthly Newsletter</h2></div> 
+        <p>Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
+        <form class="footer-subsribe">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Email Address">                            
+                        <span class="input-group-btn">
+                            <button class="btn-u" type="button">Subscribe</button>
+                        </span>
+                    </div><!-- /input-group -->                    
+        </form>             
+      </div><!--/col-md-4-->  
+      
+      <div class="col-md-4 md-margin-bottom-40">
+                <div class="posts">
+                    <div class="headline"><h2>Recent Blog Entries</h2></div>
+                    <dl class="dl-horizontal">
+                        <dt><a href="#"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
+                        <dd>
+                            <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                    <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
+                        <dd>
+                            <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                    <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
+                        <dd>
+                            <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+                        </dd>
+                    </dl>
+                </div>
+      </div><!--/col-md-4-->
+
+      <div class="col-md-4">
+              <!-- Monthly Newsletter -->
+            <div class="headline"><h2>Contact Us</h2></div> 
+                <address class="md-margin-bottom-40">
+          25, Lorem Lis Street, Orange <br />
+          California, US <br />
+          Phone: 800 123 3456 <br />
+          Fax: 800 123 3456 <br />
+          Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
+                </address>
+
+                <!-- Stay Connected -->
+            <div class="headline"><h2>Stay Connected</h2></div> 
+                <ul class="social-icons">
+                    <li><a href="#" data-original-title="Feed" class="social_rss"></a></li>
+                    <li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
+                    <li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
+                    <li><a href="#" data-original-title="Goole Plus" class="social_googleplus"></a></li>
+                    <li><a href="#" data-original-title="Pinterest" class="social_pintrest"></a></li>
+                    <li><a href="#" data-original-title="Linkedin" class="social_linkedin"></a></li>
+                    <li><a href="#" data-original-title="Vimeo" class="social_vimeo"></a></li>
+                </ul>
+      </div><!--/col-md-4-->
+    </div><!--/row--> 
+  </div><!--/container--> 
+</div><!--/footer-->  
+<!--=== End Footer ===-->
+
+<!--=== Copyright ===-->
+<div class="copyright">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">            
+              <p class="copyright-space">
+                    2013 &copy; Unify. ALL Rights Reserved. 
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                </p>
+      </div>
+      <div class="col-md-6">  
+        <a href="index.html">
+                    <img id="logo-footer" src="assets/img/logo2-default.png" class="pull-right" alt="" />
+                </a>
+      </div>
+    </div><!--/row-->
+  </div><!--/container--> 
+</div><!--/copyright--> 
+<!--=== End Copyright ===-->
+
 
 </body>
 </html>
