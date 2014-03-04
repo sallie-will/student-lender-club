@@ -10,6 +10,6 @@ student1 = User.create( first_name: 'Jenny', last_name: 'Jones', email: 'jenny@e
 student2 = User.create( first_name: 'Sally', last_name: 'Will', email: 'sally@email.com', city: 'Chicago', role: 'borrower', password: 'password', password_confirmation: 'password')
 investor = User.create( first_name: 'Ben', last_name: 'Smith', email: 'ben@email.com', city: 'Tampa', role: 'investor', password: 'password', password_confirmation: 'password')
 
-student.loans.create(amount: 20000.0, description: 'Consolidating student debt from law school.')
-student.save
+#student.loans.create(amount: 20000.0, description: 'Consolidating student debt from law school.')
+#student.save
 # investor.loan.create(amount: 20000.0, description: "Consolidating student debt from law school.")
