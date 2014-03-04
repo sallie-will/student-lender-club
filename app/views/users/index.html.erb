@@ -4,25 +4,43 @@
   <h1>Students in Need of Funding</h1> 
         <!-- Left Sidebar -->
     <div class="col-md-12 md-margin-bottom-40">
-      <% @users.each do |student| %>
+      <% @users.each do |user| %>
       <!--Blog Post-->
       <div class="well">
         <div class="row blog blog-medium margin-bottom-40">
           <div class="col-md-5">
-            <% if student.image %>
-              <%= image_tag student.image, width: "100%" %>
+            <% if user.image %>
+              <%= image_tag user.image, width: "100%" %>
             <% else %>
               <%= image_tag("main12.jpg") %>
             <% end %>
           </div>    
           <div class="col-md-7">
-            <h2><%= student.first_name + " " + student.last_name %></h2>
-            <ul class="list-unstyled list-inline blog-info">
-              <li>Amount of Funding Needed: <%= student.loans.first.amount %></li>
-              <li>Location: <%= student.city %></li>
-            </ul>
-            <p><%= student.bio %></p>
-            <p><%= link_to "Visit Full Profile", user_path(student), class: "btn-u btn-u-small" %></p>
+            <h2><%= user.first_name + " " + user.last_name %></h2>
+            
+              <p><strong>Amount of Funding Needed: <%= number_to_currency(user.loans.first.amount) %></strong></P>
+              <p>Location: <strong><%= user.city %></strong></p>
+              <% if user.undergrad_degree %>
+              <p>Undergraduate Degree: <strong><%= user.undergrad_degree %></strong></p>
+              <% end %>
+              <% if user.graduate_degree %>
+              <p>Graduate Degree: <strong><%= user.graduate_degree %></strong></p>
+              <% end %>
+              <% if user.employer %>
+              <p>Employer: <strong><%= user.employer %></strong></p>
+              <% end %>
+              <% if user.gender %>
+              <p>Gender: <strong><%= user.gender %></strong></p>
+              <% end %>
+              <% if user.ethnicity %>
+              <p>Ethnicity: <strong><%= user.ethnicity %></strong></p>
+              <% end %>
+              <% if user.religion %>
+              <p>Religion: <strong><%= user.religion %></strong></p>
+              <% end %>
+            
+            <p><%= user.bio %></p>
+            <p><%= link_to "Visit Full Profile", user_path(user), class: "btn-u btn-u-small" %></p>
           </div>    
         </div>
       </div>
