@@ -8,5 +8,5 @@ class User < ActiveRecord::Base
   has_many :investments
   validates :role, presence: true
   mount_uploader :image, ImageUploader
-  
+
 end

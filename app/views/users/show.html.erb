@@ -1,14 +1,13 @@
-<% if @user.role = "borrower" %>
-  <h1>Student Profile</h1>
-<% else @user.role = "investor"%>
-  <h1>Investor Profile</h1>
-<% end %>
-
 <p id="notice"><%= notice %></p>
 
 <!--=== Content Part ===-->
 <div class="container">   
   <div class="row portfolio-item margin-bottom-50"> 
+    <% if @user.role = "borrower" %>
+      <h1>Student Profile</h1>
+    <% else @user.role = "investor"%>
+      <h1>Investor Profile</h1>
+    <% end %>
         <!-- Content Info -->        
         <div class="col-md-6 md-margin-bottom-40">
             <h2><%= @user.first_name %> <%= @user.last_name %></h2>
@@ -36,41 +35,45 @@
             </div>            
             <p><a class="btn-u btn-u-large" href="#">VISIT THE PROJECT</a></p>
         </div>
+
+        <% if current_user == @user %>
+          <%= link_to 'Edit Login Information', edit_user_registration_path %>
+        <% end %>
         <!-- End Content Info -->        
 
         <!-- Carousel -->
         <div class="col-md-6">
-            <div class="carousel slide carousel-v1" id="myCarousel">
-                <div class="carousel-inner">
-                    <div class="item active">
-                      <img alt="" src="assets/img/main/12.jpg">
-                      <div class="carousel-caption">
-                          <p>Facilisis odio, dapibus ac justo acilisis gestinas.</p>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <img alt="" src="assets/img/main/13.jpg">
-                      <div class="carousel-caption">
-                        <p>Cras justo odio, dapibus ac facilisis into egestas.</p>
-                      </div>
-                      </div>
-                    <div class="item">
-                      <img alt="" src="assets/img/main/11.jpg">
-                      <div class="carousel-caption">
-                        <p>Justo cras odio apibus ac afilisis lingestas de.</p>
-                      </div>
-                    </div>
+          <div class="carousel slide carousel-v1" id="myCarousel">
+            <div class="carousel-inner">
+              <div class="item active">
+                <%= image_tag "main/12.jpg" %>
+                <div class="carousel-caption">
+                    <p>Facilisis odio, dapibus ac justo acilisis gestinas.</p>
                 </div>
-                
-                <div class="carousel-arrow">
-                    <a data-slide="prev" href="#myCarousel" class="left carousel-control">
-                        <i class="icon-angle-left"></i>
-                    </a>
-                    <a data-slide="next" href="#myCarousel" class="right carousel-control">
-                        <i class="icon-angle-right"></i>
-                    </a>
+              </div>
+              <div class="item">
+                <%= image_tag "main/13.jpg" %>
+                <div class="carousel-caption">
+                  <p>Cras justo odio, dapibus ac facilisis into egestas.</p>
                 </div>
+                </div>
+              <div class="item">
+                <%= image_tag "main/11.jpg" %>
+                <div class="carousel-caption">
+                  <p>Justo cras odio apibus ac afilisis lingestas de.</p>
+                </div>
+              </div>
             </div>
+              
+            <div class="carousel-arrow">
+                <a data-slide="prev" href="#myCarousel" class="left carousel-control">
+                    <i class="icon-angle-left"></i>
+                </a>
+                <a data-slide="next" href="#myCarousel" class="right carousel-control">
+                    <i class="icon-angle-right"></i>
+                </a>
+            </div>
+          </div>
         </div>
         <!-- End Carousel -->
     </div><!--/row-->
@@ -82,103 +85,73 @@
     <div class="margin-bottom-20 clearfix"></div>
 
   <!-- Recent Works -->
-    <div class="headline"><h2>Recent Works</h2></div>
+    <div class="headline"><h2>Student Statistics</h2></div>
     <div class="margin-bottom-40">
-        <ul id="list" class="bxslider1 recent-work">
-            <li>
-                <a href="#">
-                  <em class="overflow-hidden"><img src="assets/img/main/2.jpg" alt="" /></em>
-                    <span>
-                        <strong>Happy New Year</strong>
-                        <i>Anim pariatur cliche reprehenderit</i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                  <em class="overflow-hidden"><img src="assets/img/main/9.jpg" alt="" /></em>
-                    <span>
-                        <strong>Award Winning Agency</strong>
-                        <i>Responsive Bootstrap Template</i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                  <em class="overflow-hidden"><img src="assets/img/main/4.jpg" alt="" /></em>
-                    <span>
-                        <strong>Wolf Moon Officia</strong>
-                        <i>Pariatur prehe cliche reprehrit</i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                  <em class="overflow-hidden"><img src="assets/img/main/5.jpg" alt="" /></em>
-                    <span>
-                        <strong>Food Truck Quinoa Nesciunt</strong>
-                        <i>Craft labore wes anderson cred</i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                  <em class="overflow-hidden"><img src="assets/img/main/6.jpg" alt="" /></em>
-                    <span>
-                        <strong>Happy New Year</strong>
-                        <i>Anim pariatur cliche reprehenderit</i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                  <em class="overflow-hidden"><img src="assets/img/main/7.jpg" alt="" /></em>
-                    <span>
-                        <strong>Award Winning Agency</strong>
-                        <i>Responsive Bootstrap Template</i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                  <em class="overflow-hidden"><img src="assets/img/main/8.jpg" alt="" /></em>
-                    <span>
-                        <strong>Wolf Moon Officia</strong>
-                        <i>Pariatur prehe cliche reprehrit</i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                  <em class="overflow-hidden"><img src="assets/img/main/9.jpg" alt="" /></em>
-                    <span>
-                        <strong>Food Truck Quinoa Nesciunt</strong>
-                        <i>Craft labore wes anderson cred</i>
-                    </span>
-                </a>
-            </li>
-        </ul>        
-  </div><!--/row-->
+      <div class="row">
+        <div class="col-md-4">
+          <a href="#">
+            <em class="overflow-hidden"><img src="assets/img/main/2.jpg" alt="" /></em>
+              <span>
+                  <strong>Happy New Year</strong>
+                  <i>Anim pariatur cliche reprehenderit</i>
+              </span>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="#">
+            <em class="overflow-hidden"><img src="assets/img/main/9.jpg" alt="" /></em>
+              <span>
+                <strong>Award Winning Agency</strong>
+                <i>Responsive Bootstrap Template</i>
+              </span>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="#">
+            <em class="overflow-hidden"><%= image_tag "main4" %></em>
+              <span>
+                  <strong>Wolf Moon Officia</strong>
+                  <i>Pariatur prehe cdivche reprehrit</i>
+              </span>
+          </a>
+        </div>
+      </div><!--/row-->
+    </div>
+                 
   <!-- End Recent Works -->                
-</div><!--/container-->   
-<!--=== End Content Part ===-->
 
 
+  <!-- Recent Works -->
+    <div class="headline"><h2>Student Loan Needed</h2></div>
+    <div class="margin-bottom-40">
+      <div class="row">
+        <div class="col-md-12">
 
-<% if @user.role = "borrower" && @user.loans != nil %>
-  <h3>Student Loan Needed</h3>
-  <% @user.loans.each do |loan| %>
-  <%= loan.amount %>
-  <% end %>
-  <%= button_to new_user_investment(@current_user)%>
-  Invest in this Student
-  <% end %>
-<% else @user.role = "investor" && @user.investments != nil %>
-  <h3>Student Loan Needed</h3>
-  <% @user.investments.each do |investment| %>
-  <%= investment.amount %>
-  <% end %>
-<% end %>
+          <% if @user.role = "borrower" && @user.loans != nil %>
+            <% @user.loans.each do |loan| %>
+            <%= loan.amount %>
+            <% end %>
+            <%= link_to "Invest in this Student", new_user_investment_path(user_id: current_user.id), class: "btn-u" %>
+          <% else @user.role = "investor" && @user.investments != nil %>
+            <h3>Student Loans Investments</h3>
+            <% @user.investments.each do |investment| %>
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><%= message.created_at.to_formatted_s(:long) %></h3>
+              </div>
+              <div class="panel-body">
+                <strong><%= investment.amount %> to support the education of <%= investment.user.first_namae + " " + investor.user.last_name %></strong>
+                <p><%=message.content%></p>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div><!--/container-->   
+  <!--=== End Content Part ===-->
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

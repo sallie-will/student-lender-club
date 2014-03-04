@@ -14,7 +14,7 @@
     <ul class="loginbar pull-right">
         <% if user_signed_in? %>
           Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path %> |
+          <%= link_to 'Visit Profile', user_path(id: current_user.id) %> |
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to "Sign up", new_user_registration_path %> |
@@ -83,14 +83,14 @@
         <p class="margin-bottom-25 md-margin-bottom-40">Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals.</p>  
 
               <!-- Monthly Newsletter -->
-            <div class="headline"><h2>Monthly Newsletter</h2></div> 
+          <div class="headline"><h2>Monthly Newsletter</h2></div> 
         <p>Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
         <form class="footer-subsribe">
           <div class="input-group">
-              <input type="text" class="form-control" placeholder="Email Address">                            
-              <span class="input-group-btn">
-                  <button class="btn-u" type="button">Subscribe</button>
-              </span>
+            <input type="text" class="form-control" placeholder="Email Address">                            
+            <span class="input-group-btn">
+              <button class="btn-u" type="button">Subscribe</button>
+            </span>
           </div><!-- /input-group -->                    
         </form>             
       </div><!--/col-md-4-->  
@@ -99,22 +99,22 @@
         <div class="posts">
           <div class="headline"><h2>Recent Blog Entries</h2></div>
           <dl class="dl-horizontal">
-              <dt><a href="#"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
-              <dd>
-                  <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-              </dd>
+            <dt><a href="#"><%= image_tag "elastislide/6.jpg" %></a></dt>
+            <dd>
+              <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+            </dd>
           </dl>
           <dl class="dl-horizontal">
-          <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
-              <dd>
-                  <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-              </dd>
+          <dt><a href="#"><%= image_tag "elastislide/10.jpg" %></a></dt>
+            <dd>
+              <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+            </dd>
           </dl>
           <dl class="dl-horizontal">
-          <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
-              <dd>
-                  <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-              </dd>
+          <dt><a href="#"><%= image_tag "elastislide/11.jpg" %></a></dt>
+            <dd>
+              <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+            </dd>
           </dl>
         </div>
       </div><!--/col-md-4-->

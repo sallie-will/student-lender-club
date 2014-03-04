@@ -1,45 +1,55 @@
-<h1>Students in Need of Funding</h1>
-
-<% @students.each do |student| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= student.first_name + " " + student.last_name %></h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-          <li>Amount of Funding Needed: <%= student.amount %></li>
-          <li>Location: <%= student.city %></li>
-          <li>Bio: <%= student.bio %></li>
-        </ul>
-        <p><%= link_to "Visit Full Profile", student_path(student) %></p>
-      </div>
-    </div>
-<% end %>
-
-
 <!--=== Content Part ===-->
 <div class="container">   
-  <div class="row blog-page">    
+  <div class="row blog-page">   
+  <h1>Students in Need of Funding</h1> 
         <!-- Left Sidebar -->
-      <div class="col-md-9 md-margin-bottom-40">
-        <% @students.each do |student| %>
-            <!--Blog Post-->
-            <div class="row blog blog-medium margin-bottom-40">
-                <div class="col-md-5">
-                    <%= image_tag student.image, width: "100%" %>
-                </div>    
-                <div class="col-md-7">
-                    <h2><%= student.first_name + " " + student.last_name %></h2>
-                    <ul class="list-unstyled list-inline blog-info">
-                        <li>Amount of Funding Needed: <%= student.amount %></li>
-                        <li>Location: <%= student.city %></li>
-                    </ul>
-                    <p><%= student.bio %></p>
-                    <p><i class="icon-location-arrow"></i><%= link_to "Visit Full Profile", student_path(student), class: "btn-u btn-u-small" %></p>
-                </div>    
-            </div>
-            <!--End Blog Post-->        
-
-            <hr class="margin-bottom-40">
+    <div class="col-md-12 md-margin-bottom-40">
+      <% @users.each do |student| %>
+      <!--Blog Post-->
+      <div class="well">
+        <div class="row blog blog-medium margin-bottom-40">
+          <div class="col-md-5">
+            <% if student.image %>
+              <%= image_tag student.image, width: "100%" %>
+            <% else %>
+              <%= image_tag("main/main12.jpg") %>
             <% end %>
+          </div>    
+          <div class="col-md-7">
+            <h2><%= student.first_name + " " + student.last_name %></h2>
+            <ul class="list-unstyled list-inline blog-info">
+              <li>Amount of Funding Needed: <%= student.loans.first.amount %></li>
+              <li>Location: <%= student.city %></li>
+            </ul>
+            <p><%= student.bio %></p>
+            <p><%= link_to "Visit Full Profile", user_path(student), class: "btn-u btn-u-small" %></p>
+          </div>    
+        </div>
+      </div>
+      <!--End Blog Post-->        
+
+      <hr class="margin-bottom-40">
+      <% end %>
+
+              <!--Pagination-->
+      <div class="text-center">
+        <ul class="pagination">
+          <li class="active"><a href="#">«</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">6</a></li>
+          <li><a href="#">7</a></li>
+          <li><a href="#">8</a></li>
+          <li><a href="#">»</a></li>
+        </ul>                                                            
+      </div>
+      <!--End Pagination-->
+  </div>
+  <!-- End Left Sidebar -->
+
+</div>
+
 

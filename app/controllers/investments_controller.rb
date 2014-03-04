@@ -1,5 +1,6 @@
 class InvestmentsController < ApplicationController
   before_action :set_investment, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /investments
   # GET /investments.json
