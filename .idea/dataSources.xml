@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3862858168">
+    <data-source source="LOCAL" name="Rails student-lender-club: development" uuid="e44847c9-ebaa-46f9-a25c-d188eb04d6a4">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:student_lender_club_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails student-lender-club: test" uuid="51d7adea-4f22-4315-b0d9-d9774c483df1">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:student_lender_club_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails student-lender-club: production" uuid="606faae4-b041-4762-bc16-416a12d38bb9">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:student_lender_club_production</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

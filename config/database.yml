@@ -1,4 +1,5 @@
 development:
+  user: chris
   adapter: postgresql
   database: student_lender_club_development
   pool: 5
