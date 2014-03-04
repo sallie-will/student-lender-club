@@ -1,7 +1,7 @@
   <!-- Recent Works -->
     <div class="headline"><h2>Recent Works</h2></div>
     <div class="row">
-      <% @users.each do |student| %>
+      <% @users.each do |user| %>
         <div class="col-md-3 col-sm-6">
             <div class="thumbnails thumbnail-style thumbnail-kenburn">
               <div class="thumbnail-img">
@@ -11,11 +11,9 @@
                   <a class="btn-more hover-effect" href="#">read more +</a>         
                 </div>
                 <div class="caption">
-                    <h3><%= link_to student.first_name, user_path(student), class: "hover-effect" %></h3>
-                    <p><%= student.bio %></p>
-                    <p><%= link_to image_tag("linkedin.png"), student.linkedin %>  | 
-                        <%= link_to raw("<i class=\"icon-facebook icon-large\"> </i>"), student.facebook %>  |
-                        <%= link_to raw("<i class=\"icon-twitter icon-large\"> </i>"), student.twitter %></p>
+                    <h3><%= link_to user.first_name, user_path(user), class: "hover-effect" %></h3>
+                    <p><%= user.bio %> <strong><%= link_to "Read More...", user_path(user) %></strong></p>
+                    
                 </div>
             </div>
         </div>
