@@ -21,3 +21,4 @@ student4.save
 
 investor1 = User.create( first_name: 'Ben', last_name: 'Smith', email: 'ben@email.com', city: 'Tampa', role: 'investor', image: 'ben.jpg', bio: 'Serial entrepreneur interested in supporting further training for potential clean-tech entrepreneurs.', password: 'password', password_confirmation: 'password')
 investor2 = User.create( first_name: 'Nancy', last_name: 'Potter', email: 'nancy@email.com', city: 'Austin', role: 'investor', image: 'nancy.jpg', bio: 'Long-time IT exec looking to support mid-career women who want to transition into careers in tech.', password: 'password', password_confirmation: 'password')
+

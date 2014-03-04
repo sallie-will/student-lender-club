@@ -1,0 +1,33 @@
+
+
+$color1: #2ca02c
+$color2: black
+
+.logo
+  height: 50px
+  @media (min-width: 768px)
+    height: 80px
+
+a
+  &:hover, &:focus
+    color: $color1 !important
+    background: none !important
+    text-decoration: none
+
+.navbar-toggle
+  padding: 15px 10px
+  .icon-bar
+    height: 5px
+    background: $color1
+
+.nav > li > a
+  font-size: 120%
+  &:hover, &:focus, &:active
+    font-weight: bold
+    color: $color1
+    text-decoration: none
+    background-color: none
+.active
+  color: $color1
+  text-decoration: none
+  background-color: none
