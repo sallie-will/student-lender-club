@@ -7,6 +7,7 @@ StudentLenderClub::Application.routes.draw do
   get "pages/terms_of_service"
   get "pages/privacy_policy"
   get "pages/contact_us"
+  get "pages/partners"
   devise_for :users
   
   resources :users do

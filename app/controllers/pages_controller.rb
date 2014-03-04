@@ -21,4 +21,7 @@ class PagesController < ApplicationController
   def contact_us
   end
 
+  def partners
+  end
+
 end
