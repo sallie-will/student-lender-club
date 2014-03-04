@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def index
+     @users = User.where(role: 'borrower').take(4)
   end
 
   def about
