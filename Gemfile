@@ -10,8 +10,8 @@ gem 'devise'
 gem 'rails_12factor', group: :production
 
 # Photo Uploader
-gem "rmagick"
-gem "carrierwave"
+# gem "rmagick"
+# gem "carrierwave"
 
 # Use SCSS for stylesheets
 # Assets
