@@ -2,12 +2,13 @@ StudentLenderClub::Application.routes.draw do
 
   get "pages/index"
   get "pages/about"
-  get "pages/investing"
+  get "pages/investors"
   get "pages/how_it_works"
   get "pages/terms_of_service"
   get "pages/privacy_policy"
   get "pages/contact_us"
   get "pages/partners"
+  get "pages/students"
   devise_for :users
   
   resources :users do
