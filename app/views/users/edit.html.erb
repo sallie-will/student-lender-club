@@ -1,6 +1,14 @@
-<h1>Editing user</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <h1>Edit Your User Profile</h1>
+      <%= render 'form' %>
+
+      <%= link_to 'Show', @user %> |
+      <%= link_to 'Back', users_path %>
+      <hr>
+    </div>
+  </div>
+</div><!--/container--> 
