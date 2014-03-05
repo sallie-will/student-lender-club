@@ -9,23 +9,6 @@
 </head>
 <body>
 
-<!--=== Top ===-->
-<div class="top">
-  <div class="container">
-    <ul class="loginbar pull-right">
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.name %></strong>.
-          <%= link_to 'Visit Profile', user_path(id: current_user.id) %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path %> |
-          <%= link_to "Login", new_user_session_path %>
-        <% end %>
-    </ul>
-  </div>
-</div><!--/top-->
-<!--=== End Top ===-->
-
 <!--=== Header ===-->    
 <div class="header">
   <div class="navbar" role="navigation">
@@ -53,7 +36,21 @@
           <li><%=link_to "Students", pages_students_path %></li>
           <li><%=link_to "Investors", pages_investors_path %></li>
           <li><%=link_to "About Us", pages_about_path %></li>
-          <li><%= link_to "Login", new_user_session_path, class:'btn btn-default navbar-btn' %></li>
+          <% if user_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=current_user.name%> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li>
+                <%= link_to 'Profile', user_path(id: current_user.id)%>
+              <li>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          <% else %>
+            <li>
+              <%= link_to "Login", new_user_session_path %>
+            </li>
+          <% end %>
         </ul>
       </div><!-- /navbar-collapse -->
     </div>    
