@@ -5,13 +5,15 @@
   <div class="row portfolio-item margin-bottom-50"> 
         <!-- Content Info -->        
         <div class="col-md-6 md-margin-bottom-40">
-          <% if @user.role = "borrower" %>
+          <% if @user.role == "borrower" %>
             <h1>Student Profile</h1>
-          <% else @user.role = "investor"%>
+          <% else @user.role == "investor"%>
             <h1>Investor Profile</h1>
           <% end %>
             <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-                 <p>Location: <strong><%= @user.city %></strong></p>
+              <% if @user.city %>
+              <p>Location: <strong><%= @user.city %></strong></p>
+              <% end %>
               <% if @user.undergrad_degree %>
               <p>Undergraduate Degree: <strong><%= @user.undergrad_degree %></strong></p>
               <% end %>
@@ -34,19 +36,22 @@
               <br />
               <%= render "pages/social_media" %>
               <br />           
-            <p><a class="btn-u btn-u-large" href="#">Request More Info About Investing</a></p>
-        </div>
 
         <% if current_user == @user %>
           <%= link_to 'Edit Login Information', edit_user_registration_path %> |
           <%= link_to 'Edit Profile', edit_user_path(@user) %> |
           <%= link_to 'Back', users_path %>
         <% end %>
+        </div>
         <!-- End Content Info -->        
 
         <!-- Carousel -->
-        <div class="col-md-6">
-          <%= image_tag @user.image, width: "80%" %>
+        <div class="col-md-6 text-center">
+          <% if @user.role == "borrower" %>
+          <%= image_tag @user.image, width: "70%" %>
+          <br /><br />
+          <div class="alert alert-success"><h4>Will Score: <%= @user.will_score %></h4></div>
+          <% end %>
         </div>
         <!-- End Carousel -->
     </div><!--/row-->
@@ -54,34 +59,20 @@
     <div class="margin-bottom-20 clearfix"></div>
 
     <!-- Recent Works -->
+    <% if @user.role == "borrower" %>
     <div class="headline"><h2>Student Loan Needed</h2></div>
     <div class="margin-bottom-40">
       <div class="row">
         <div class="col-md-12">
-          <% if current_user %>
-            <% if @user.role = "borrower" && @user.loans != nil %>
+          <% if current_user && @user.loans != nil %>
               <% @user.loans.each do |loan| %>
-              <%= loan.amount %>
+              <strong>Outstanding Debt: <%= number_to_currency(loan.amount) %></strong>
               <% end %>
+              <br /><br />
               <%= link_to "Invest in this Student", new_user_investment_path(user_id: current_user.id), class: "btn-u" %>
-            <% else @user.role = "investor" && @user.investments != nil %>
-              <h3>Student Loans Investments</h3>
-              <% @user.investments.each do |investment| %>
-              <div class="panel panel-primary">
-                <div class="panel-heading">
-                  <h3 class="panel-title"><%= message.created_at.to_formatted_s(:long) %></h3>
-                </div>
-                <div class="panel-body">
-                  <strong><%= investment.amount %> to support the education of <%= investment.user.first_namae + " " + investor.user.last_name %></strong>
-                  <p><%=message.content%></p>
-                </div>
-              </div>
-              <% end %>
-            <% end %>
           <% else %>
-            <p><%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Login", new_user_session_path %> to learn more about how you can help <%= @user.name %> achieve their goals.</p>
+            <p>Are you a potential investor? Visit the <%= link_to "investing", pages_investing_path %> to learn more about how you can help <%= @user.name %> achieve their goals.</p>
           <% end %>
-
         </div>
       </div>
     </div>
@@ -91,35 +82,33 @@
     <div class="margin-bottom-40">
       <div class="row">
         <div class="col-md-4">
-         
-              <span>
-                  <h4><strong>Academic Performance</strong></h4>
-                  <p>< @user.academic_performance ></p>
-              </span>
+            <span>
+              <h4><strong>Academic Performance</strong></h4>
+              <p>GPA: <%= @user.gpa %></p>
+              <p>Class Rank: <%= @user.class_rank %></p>
+            </span>
           </a>
         </div>
         <div class="col-md-4">
-
-              <span>
-                <h4><strong>Earning Potential</strong></h4>
-                <p>< @user.earning_potential ></p>
-              </span>
+            <span>
+              <h4><strong>Earning Potential</strong></h4>
+              <p>Current Salary: <%= @user.current_salary %></p>
+              <p>Employer Recomendation: <%= @user.employer_recommendation %></p>
+            </span>
           </a>
         </div>
         <div class="col-md-4">
-
-              <span>
-                  <h4><strong>Credit History</strong></h4>
-                  <p>< @user.credit_history ></p>
-              </span>
+            <span>
+              <h4><strong>Credit History</strong></h4>
+              <p>Credit Score: <%= @user.credit_score %></p>
+            </span>
           </a>
         </div>
       </div><!--/row-->
     </div>
+  <% end %>
                  
   <!-- End Recent Works -->                
 
-
-
-  </div><!--/container-->   
+</div><!--/container-->   
   <!--=== End Content Part ===-->

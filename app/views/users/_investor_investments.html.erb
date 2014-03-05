@@ -1,0 +1,12 @@
+<h3>Student Loans Investments</h3>
+  <% @user.investments.each do |investment| %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= message.created_at.to_formatted_s(:long) %></h3>
+    </div>
+    <div class="panel-body">
+      <strong><%= investment.amount %> to support the education of <%= investment.user.first_namae + " " + investor.user.last_name %></strong>
+      <p><%=message.content%></p>
+    </div>
+  </div>
+  <% end %>
