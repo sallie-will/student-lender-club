@@ -17,8 +17,9 @@
           </div>    
           <div class="col-md-7">
             <h2><%= user.first_name + " " + user.last_name %></h2>
-            
+              <% if current_user %>
               <p><strong>Amount of Funding Needed: <%= number_to_currency(user.loans.first.amount) %></strong></P>
+              <% end %>
               <p>Location: <strong><%= user.city %></strong></p>
               <% if user.undergrad_degree %>
               <p>Undergraduate Degree: <strong><%= user.undergrad_degree %></strong></p>

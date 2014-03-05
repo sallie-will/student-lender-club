@@ -37,7 +37,7 @@
               <%= render "pages/social_media" %>
               <br />           
 
-        <% if current_user == @user %>
+        <% if current_user && current_user == @user %>
           <%= link_to 'Edit Login Information', edit_user_registration_path %> |
           <%= link_to 'Edit Profile', edit_user_path(@user) %> |
           <%= link_to 'Back', users_path %>
@@ -71,7 +71,7 @@
               <br /><br />
               <%= link_to "Invest in this Student", new_user_investment_path(user_id: current_user.id), class: "btn-u" %>
           <% else %>
-            <p>Are you a potential investor? Visit the <%= link_to "investing", pages_investing_path %> to learn more about how you can help <%= @user.name %> achieve their goals.</p>
+            <p>Are you a potential investor? Visit the <strong><%= link_to "Investing Page", pages_investors_path %></strong> to learn more about how you can help <%= @user.name %> achieve their goals.</p>
           <% end %>
         </div>
       </div>
@@ -81,6 +81,7 @@
     <div class="headline"><h2>Student Highlights</h2></div>
     <div class="margin-bottom-40">
       <div class="row">
+        <% if current_user %>
         <div class="col-md-4">
             <span>
               <h4><strong>Academic Performance</strong></h4>
@@ -104,6 +105,11 @@
             </span>
           </a>
         </div>
+        <% else %>
+        <div class="col-md-12">
+        <p>This information is only visible to registered investors. Visit the <strong><%= link_to "Investing Page", pages_investors_path %></strong> to learn more.</p>
+        <% end %>
+      </div>
       </div><!--/row-->
     </div>
   <% end %>
