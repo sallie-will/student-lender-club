@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   validates :role, presence: true
   # mount_uploader :image, ImageUploader
 
+  def name
+    self.first_name + " " + self.last_name
+  end
+
 end
