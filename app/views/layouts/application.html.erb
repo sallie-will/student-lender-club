@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Sallie Will</title>
+  <%= favicon_link_tag('favicon.png')%>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -32,7 +33,7 @@
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <a class="navbar-brand hidden-md hidden-lg" style="padding: 10px" href="index.html">
-          <img class="logo" src="assets/salliewillFull.png" height="224px" alt=""/>
+          <%= link_to image_tag('salliewillFull.png',  :class =>'logo'), root_path, :class => 'navbar-brand hidden-md hidden-lg', :style => 'padding: 10px;' %>
         </a>
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
             <span class="sr-only">Toggle navigation</span>
