@@ -57,10 +57,9 @@
   </div>     
 </div><!--/header-->
 <!--=== End Header ===-->    
-<div>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-</div>
+<%= notice %>
+<%= alert %>
+
 
 <%= yield %>
 
@@ -70,43 +69,21 @@
     <div class="row">
       <div class="col-md-4 md-margin-bottom-40">
                 <!-- About -->
-        <div class="headline"><h2>This is SallieWill</h2></div>  
-        <p class="margin-bottom-25 md-margin-bottom-40">SallieWill is a peer-to-peer investment network that helps high achieving students and graduates reduce the interest rates on their student loans by linking them to private investors who are excited to refinance the loans at a lower rate./p> 
-        <ul>
-          <li>Direct Lender to Borrower Relationships</li>
-          <li>Ratings Beyond a Standard Credit Score</li>
-          <li>Mentorship & Employment Connections</li>
-          <li>Empowering Our Future Change Creators</li>
-        </ul>
-                    
+           <div class="headline"><h2>Monthly Newsletter</h2></div> 
+        <p>Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
+        <form class="footer-subsribe">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Email Address">                            
+            <span class="input-group-btn">
+              <button class="btn-u" type="button">Subscribe</button>
+            </span>
+          </div><!-- /input-group -->                    
+        </form>           
       </div><!--/col-md-4-->  
       
+<!-- Monthly Newsletter -->
       <div class="col-md-4 md-margin-bottom-40">
-        <div class="posts">
-          <div class="headline"><h2>Recent Blog Entries</h2></div>
-          <dl class="dl-horizontal">
-            <dt><a href="#"><%= image_tag "elastislide/6.jpg" %></a></dt>
-            <dd>
-              <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-            </dd>
-          </dl>
-          <dl class="dl-horizontal">
-          <dt><a href="#"><%= image_tag "elastislide/10.jpg" %></a></dt>
-            <dd>
-              <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-            </dd>
-          </dl>
-          <dl class="dl-horizontal">
-          <dt><a href="#"><%= image_tag "elastislide/11.jpg" %></a></dt>
-            <dd>
-              <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-            </dd>
-          </dl>
-        </div>
-      </div><!--/col-md-4-->
-
-      <div class="col-md-4">
-              <!-- Monthly Newsletter -->
+        <!-- Monthly Newsletter -->
             <div class="headline"><h2>Contact Us</h2></div> 
                 <address class="md-margin-bottom-40">
           25, Lorem Lis Street, Orange <br />
@@ -115,18 +92,12 @@
           Fax: 800 123 3456 <br />
           Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
                 </address>
+      </div><!--/col-md-4-->
 
-                <!-- Stay Connected -->
+      <div class="col-md-4">
+            <!-- Stay Connected -->
             <div class="headline"><h2>Stay Connected</h2></div> 
-              <ul class="social-icons">
-                <li><a href="#" data-original-title="Feed" class="social_rss"></a></li>
-                <li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
-                <li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
-                <li><a href="#" data-original-title="Goole Plus" class="social_googleplus"></a></li>
-                <li><a href="#" data-original-title="Pinterest" class="social_pintrest"></a></li>
-                <li><a href="#" data-original-title="Linkedin" class="social_linkedin"></a></li>
-                <li><a href="#" data-original-title="Vimeo" class="social_vimeo"></a></li>
-              </ul>
+              <p><%= link_to image_tag("linkedin.png"), root_path %>        <%= link_to image_tag("facebook.png"), root_path %>        <%= link_to image_tag("twitter.png"), root_path %></p>
       </div><!--/col-md-4-->
     </div><!--/row--> 
   </div><!--/container--> 
@@ -139,7 +110,7 @@
     <div class="row">
       <div class="col-md-6">            
               <p class="copyright-space">
-                    2014 &copy; Sallie Well. ALL Rights Reserved. 
+                    2014 &copy; SallieWill. ALL Rights Reserved. 
                     <%= link_to "Privacy Policy", pages_privacy_policy_path %> | <%= link_to "Terms of Service", pages_terms_of_service_path %>
                 </p>
       </div>

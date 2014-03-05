@@ -17,6 +17,7 @@
  *= require style
  *= require parallax-slider
  *= require flexslider
+ *= carousel
  *= require_self
  *= require_tree .
  */

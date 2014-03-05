@@ -128,25 +128,28 @@
     <div class="margin-bottom-40">
       <div class="row">
         <div class="col-md-12">
-
-          <% if @user.role = "borrower" && @user.loans != nil %>
-            <% @user.loans.each do |loan| %>
-            <%= loan.amount %>
-            <% end %>
-            <%= link_to "Invest in this Student", new_user_investment_path(user_id: current_user.id), class: "btn-u" %>
-          <% else @user.role = "investor" && @user.investments != nil %>
-            <h3>Student Loans Investments</h3>
-            <% @user.investments.each do |investment| %>
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title"><%= message.created_at.to_formatted_s(:long) %></h3>
+          <% if current_user %>
+            <% if @user.role = "borrower" && @user.loans != nil %>
+              <% @user.loans.each do |loan| %>
+              <%= loan.amount %>
+              <% end %>
+              <%= link_to "Invest in this Student", new_user_investment_path(user_id: current_user.id), class: "btn-u" %>
+            <% else @user.role = "investor" && @user.investments != nil %>
+              <h3>Student Loans Investments</h3>
+              <% @user.investments.each do |investment| %>
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><%= message.created_at.to_formatted_s(:long) %></h3>
+                </div>
+                <div class="panel-body">
+                  <strong><%= investment.amount %> to support the education of <%= investment.user.first_namae + " " + investor.user.last_name %></strong>
+                  <p><%=message.content%></p>
+                </div>
               </div>
-              <div class="panel-body">
-                <strong><%= investment.amount %> to support the education of <%= investment.user.first_namae + " " + investor.user.last_name %></strong>
-                <p><%=message.content%></p>
-              </div>
-            </div>
+              <% end %>
             <% end %>
+          <% else %>
+            <p><%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Login", new_user_session_path %> to learn more about you can help <%= @user.name %> achieve their goals.</p>
           <% end %>
 
         </div>
