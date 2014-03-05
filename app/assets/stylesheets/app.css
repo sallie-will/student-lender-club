@@ -30,7 +30,7 @@ a:active {
    outline: 0 !important;
 }
 a:hover {
-   color: #72c02c;
+   color: #298F00;
    text-decoration: underline;
 }
 
@@ -83,8 +83,8 @@ img.img-circle {
 .pagination > .active > span:hover, 
 .pagination > .active > a:focus, 
 .pagination > .active > span:focus {
-   background-color: #72c02c;
-   border-color: #72c02c;
+   background-color: #00578A;
+   border-color: #00578A;
 }
 
 .pagination li a:hover {
@@ -113,7 +113,7 @@ img.img-circle {
    cursor:pointer;
    padding:6px 13px;
    position:relative;
-   background:#72c02c;
+   background:#00578A;
    display:inline-block;
    color:#fff !important;
    text-decoration:none !important;
@@ -299,7 +299,7 @@ a.btn-u-lg {
 }
 
 .fa-icons li:hover { 
-   color: #72c02c;
+   color: #298F00;
 }
 
 .fa-icons li i { 
@@ -311,7 +311,7 @@ a.btn-u-lg {
 }
 .fa-icons li:hover i {
    color: #fff;
-   background: #72c02c; 
+   background: #298F00; 
 }
 
 /*Font Awesome Icon Styles*/
@@ -448,7 +448,7 @@ Special styles for displaying the icons and their classes*/
    margin: 5px auto 10px;
 }
 .bs-glyphicons li:hover {
-   color: #72c02c;
+   color: #298F00;
    background-color: #fafafa;
 }
 
@@ -476,7 +476,7 @@ li [class*=" icon-"].icon-lg {
 .color-sea { color:#1abc9c;}
 .color-red { color:#e74c3c;}
 .color-blue { color:#3498db;}
-.color-green { color:#72c02c;}
+.color-green { color:#298F00;}
 .color-orange { color:#e67e22;}
 .color-green1 { color:#2ecc71;}
 
@@ -509,13 +509,13 @@ a.read-more {
    text-decoration:none;
 }
 a.read-more:hover { 
-   color:#72c02c; 
+   color:#298F00; 
    text-decoration:none;
 }
 
 /*Link color-green-style*/
 .linked:hover {
-   color:#72c02c;
+   color:#298F00;
    text-decoration:none;
 }
 
@@ -868,7 +868,7 @@ i.style-switcher-btn-option:hover {
 }
 
 .style-switcher li.theme-default {
-   background: #72c02c;
+   background: #298F00;
 }
 .style-switcher li.theme-blue {
    background: #3498db;
