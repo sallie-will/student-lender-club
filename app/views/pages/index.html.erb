@@ -7,11 +7,18 @@
       <%= image_tag "homepage-header-sallie03.jpg", width: "100%" %>
       <div class="container">
         <div class="carousel-caption">
-          <h2>PHILANTHROPIC CAPITAL:</h2>
-          <h2><i>INVESTING IN OUR FUTURE</i></h2>
-          <p><i>Connecting visionary alumni </i> <br /> <i>directly to high achieving</i> <br /> <i>students & graduates.</i></p>
-          <%= link_to "Students", pages_students_path, class: 'btn-cta' %>
-          <%= link_to "Investors", pages_investors_path, class: 'btn-cta' %>
+
+          <h2>Philantropic Capitol:</h2>
+          <h2>Investing in Our Future
+            <small>
+              <p>Connecting visionary alumni directly <br/>to high achieving students & graduates.</p>
+            </small>
+          </h2>
+          <div class="btn-cta-group">
+            <%= link_to "Students", pages_students_path, class: 'btn-cta' %>
+            <%= link_to "Investors", pages_investors_path, class: 'btn-cta' %>
+          </div>
+
         </div>
       </div>
     </div>
