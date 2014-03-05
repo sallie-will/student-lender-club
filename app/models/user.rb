@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :loans
   has_many :investments
   validates :role, presence: true
+  validates :email, uniqueness: true
   # mount_uploader :image, ImageUploader
 
   def name
